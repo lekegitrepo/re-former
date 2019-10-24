@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
@@ -22,9 +24,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-  
-  def show
-  end
+
+  def show; end
 
   def update
     respond_to do |format|
@@ -36,10 +37,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
->>>>>>> b68d4cdc2dc3e404fd0dd07e2d62a6a2e1a3d530
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
