@@ -1,0 +1,22 @@
+<h1>Edit User</h1>
+
+<%= form_for @user do |f| %>
+  <div class="form-block">
+    <%= f.label(:username, 'Username:') %>
+    <%= f.text_field(:username, placeholder: 'ex. John Doe') %>
+  </div>
+
+  <div class="form-block">
+    <%= f.label(:email, 'Email') %>
+    <%= f.text_field(:email, placeholder: 'example@gmail.com') %>
+  </div>
+
+  <div class="form-block">
+    <%= f.label(:password, 'Password') %>
+    <%= f.text_field(:password) %>
+  </div>
+
+  <div class="form-block">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
