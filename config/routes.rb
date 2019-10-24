@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'users/create'
   get 'users/edit'
   get 'users/show'
-  resources :users, only: [:new, :create, :edit, :index, :show]
+  resources :users, except: [:destroy]
 end
