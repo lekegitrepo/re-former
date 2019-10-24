@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: %i[show edit update]
 
   def index
     @users = User.all
@@ -23,8 +23,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def show
-  end
+  def show end
 
   def update
     respond_to do |format|
@@ -39,7 +38,6 @@ class UsersController < ApplicationController
   end
 
   private
-  
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
