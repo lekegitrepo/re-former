@@ -1,22 +1,65 @@
 <h1>Users</h1>
 
-<%= form_for @user do |f| %>
-  <div class="form-block">
-    <%= f.label(:username, 'Username:') %>
-    <%= f.text_field(:username, placeholder: 'ex. John Doe') %>
+<!-- <form accept-charset="utf-8" action="/User" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label for="username"> <input type="text" name="username"></label>
   </div>
+  <br>
+  <div>
+    <label for="email"> <input type="email" name="email"></label>
+  </div>
+  <br>
+  <div>
+    <label for="password"> <input type="password" name="password"></label>
+  </div>
+  <br>
+  <div>
+    <input type="submit" name="submit" value="Create">
+  </div>
+</form> -->
 
-  <div class="form-block">
-    <%= f.label(:email, 'Email') %>
-    <%= f.text_field(:email, placeholder: 'example@gmail.com') %>
-  </div>
+<% if false %><!-- comment out -->
+  <%= form_tag('/user', method: 'post') do %>
+    <div class="form-block">
+      <%= label_tag(:username, 'Username:') %>
+      <%= text_field_tag(:username, 'ex. John Doe') %>
+    </div>
 
-  <div class="form-block">
-    <%= f.label(:password, 'Password') %>
-    <%= f.text_field(:password) %>
-  </div>
+    <div class="form-block">
+      <%= label_tag(:email, 'Email') %>
+      <%= email_field_tag(:email, 'example@gmail.com') %>
+    </div>
 
-  <div class="form-block">
-    <%= f.submit "Create" %>
-  </div>
+    <div class="form-block">
+      <%= label_tag(:password, 'Password') %>
+      <%= password_field_tag(:password) %>
+    </div>
+
+    <div class="form-block">
+      <%= submit_tag "Create" %>
+    </div>
+  <% end %>
 <% end %>
+
+
+  <%= form_for @user do |f| %>
+    <div class="form-block">
+      <%= f.label(:username, 'Username:') %>
+      <%= f.text_field(:username, placeholder: 'ex. John Doe') %>
+    </div>
+
+    <div class="form-block">
+      <%= f.label(:email, 'Email') %>
+      <%= f.email_field(:email, placeholder: 'example@gmail.com') %>
+    </div>
+
+    <div class="form-block">
+      <%= f.label(:password, 'Password') %>
+      <%= f.password_field(:password) %>
+    </div>
+
+    <div class="form-block">
+      <%= f.submit "Create" %>
+    </div>
+  <% end %>
